@@ -25,29 +25,22 @@ gradually because of overfitting in the model. It is important to set its value 
 account in order to make the best split.
 • criterion: It measure the quality of a split. Supported criteria are “gini” for the Gini impurity and “entropy” for the information gain.
 
-Bayesian Optimization
+
 Bayesian Optimization is an iterative algorithm that attempts to minimize (or maximize) an objective function by building a surrogate model to approximate the 
-function and using this model to select the next set of hyperparameters to evaluate.
-The steps involved in Bayesian Optimization are:
+function and using this model to select the next set of hyperparameters to evaluate. The steps involved in Bayesian Optimization are:
+
 • Initialization: Start with a small set of random hyperparameter values and evaluate the objective function at these points.
+
 • Surrogate Model: Fit a probabilistic model (usually a Gaussian Process) to the evaluated points.
 • Acquisition Function: Use the surrogate model to select the next set of hyperparameters to evaluate by optimizing an acquisition function.
 • Evaluation: Evaluate the objective function at the selected hyperparameters.
 • Update: Update the surrogate model with the new observation.
 • Iteration: Repeat steps until a stopping criterion is met (e.g., a maximum number of iterations).
 
-Implementation
-• Step 1: Define the Objective function
-• Step 2: Define the Hyperparameter spaceGiven 
-• Step 3: Run The Optimization Algorithm
-• Step 4: Evaluate the results
+Implementation: define the objective function then define the Hyperparameter space given after that run The Optimization Algorithm and finally evaluate the results.
 
-Results
-It can be observed that after hyperparameter tuning the model accuracy 
-is increased by a significant amount. Both the cross validation score as 
-well as ROC-AUC is increased.
+It can be observed that after hyperparameter tuning the model accuracy is increased by a significant amount. Both the cross validation score as well as ROC-AUC is increased.
 
-Conclusion
 Bayesian Optimization is a powerful method for hyperparameter optimization that efficiently explores the hyperparameter space by balancing exploration and 
 exploitation. This approach often finds better hyperparameters in fewer iterations compared to traditional methods like grid search and random search. In this
 report, we demonstrated how to implement Bayesian Optimization using the scikit-optimize library to optimize the hyperparameters of a RandomForestClassifier. By
